@@ -50,8 +50,10 @@ export Controlpanel from '@plone/volto/components/manage/Controlpanels/Controlpa
 export Controlpanels from '@plone/volto/components/manage/Controlpanels/Controlpanels';
 export ModerateComments from '@plone/volto/components/manage/Controlpanels/ModerateComments';
 export UsersControlpanel from '@plone/volto/components/manage/Controlpanels/UsersControlpanel';
+export UsersControlpanelGroups from '@plone/volto/components/manage/Controlpanels/UsersControlpanelGroups';
 export VersionOverview from '@plone/volto/components/manage/Controlpanels/VersionOverview';
 export Delete from '@plone/volto/components/manage/Delete/Delete';
+export UsersControlpanelUser from '@plone/volto/components/manage/Controlpanels/UsersControlpanelUser';
 export Diff from '@plone/volto/components/manage/Diff/Diff';
 export DiffField from '@plone/volto/components/manage/Diff/DiffField';
 export Display from '@plone/volto/components/manage/Display/Display';
@@ -74,12 +76,15 @@ export SchemaWidget from '@plone/volto/components/manage/Widgets/SchemaWidget';
 export SchemaWidgetFieldset from '@plone/volto/components/manage/Widgets/SchemaWidgetFieldset';
 export SelectWidget from '@plone/volto/components/manage/Widgets/SelectWidget';
 export Sidebar from '@plone/volto/components/manage/Sidebar/Sidebar';
+export SidebarPortal from '@plone/volto/components/manage/Sidebar/SidebarPortal';
 export Sharing from '@plone/volto/components/manage/Sharing/Sharing';
 export TextareaWidget from '@plone/volto/components/manage/Widgets/TextareaWidget';
 export TextWidget from '@plone/volto/components/manage/Widgets/TextWidget';
 export Toolbar from '@plone/volto/components/manage/Toolbar/Toolbar';
 export WysiwygWidget from '@plone/volto/components/manage/Widgets/WysiwygWidget';
 export Workflow from '@plone/volto/components/manage/Workflow/Workflow';
+
+export TileChooser from '@plone/volto/components/manage/TileChooser/TileChooser';
 
 export EditDescriptionTile from '@plone/volto/components/manage/Tiles/Description/Edit';
 export EditTitleTile from '@plone/volto/components/manage/Tiles/Title/Edit';
@@ -99,6 +104,8 @@ export ViewImageTile from '@plone/volto/components/manage/Tiles/Image/View';
 export ViewVideoTile from '@plone/volto/components/manage/Tiles/Video/View';
 export ViewMapTile from '@plone/volto/components/manage/Tiles/Maps/View';
 export ViewHTMLTile from '@plone/volto/components/manage/Tiles/HTML/View';
+
+export ImageSidebar from '@plone/volto/components/manage/Sidebar/ImageSidebar';
 
 export PersonalTools from '@plone/volto/components/manage/Toolbar/PersonalTools';
 export More from '@plone/volto/components/manage/Toolbar/More';

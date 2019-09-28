@@ -46,7 +46,7 @@ const getList = ordered => (children, { depth, keys }) =>
   );
 
 // Special function to deal with list clones
-const getSpecialList = type => (children, { depth, keys }) => (
+/*const getSpecialList = type => (children, { depth, keys }) => (
   <ul key={keys[0]} keys={keys} depth={depth} className={type}>
     {children.map((child, i) => (
       <li key={keys[i]} className={`${type}-item`}>
@@ -55,6 +55,7 @@ const getSpecialList = type => (children, { depth, keys }) => (
     ))}
   </ul>
 );
+*/
 
 const getAtomic = (children, { data, keys }) =>
   data.map((item, i) => <div key={keys[i]} {...data[i]} />);
@@ -106,6 +107,9 @@ const entities = {
     <a key={key} href={entity.url}>
       {children}
     </a>
+  ),
+  IMAGE: (children, entity, { key }) => (
+    <img key={key} src={entity.src} alt={entity.alt} />
   ),
 };
 

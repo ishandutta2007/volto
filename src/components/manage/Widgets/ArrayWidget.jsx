@@ -104,9 +104,9 @@ const customSelectStyles = {
   }),
 };
 
-const getChoices = choices =>
+/*const getChoices = choices =>
   choices ? choices.map(item => ({ label: item, value: item })) : [];
-
+*/
 /**
  * ArrayWidget component class.
  * @class ArrayWidget
@@ -222,7 +222,7 @@ class ArrayWidget extends Component {
     this.props.getVocabulary(this.vocabBaseUrl, search, offset);
     this.setState({ search });
     return {
-      options: this.props.choices,
+      options: this.props.items.choices,
       hasMore: this.props.itemsTotal > 25,
       additional: {
         offset: offset === additional.offset ? offset + 25 : offset,
@@ -248,7 +248,7 @@ class ArrayWidget extends Component {
    * @returns {string} Markup for the component.
    */
   render() {
-    const { id, title, required, description, error } = this.props;
+    const { id, title, required, description, error, fieldSet } = this.props;
     const { selectedOption } = this.state;
     return (
       <Form.Field
@@ -256,6 +256,7 @@ class ArrayWidget extends Component {
         required={required}
         error={error.length > 0}
         className={description ? 'help' : ''}
+        id={`${fieldSet || 'field'}-${id}`}
       >
         <Grid>
           <Grid.Row stretched>
@@ -269,7 +270,7 @@ class ArrayWidget extends Component {
                 <AsyncPaginate
                   className="react-select-container"
                   classNamePrefix="react-select"
-                  options={this.props.choices || []}
+                  options={this.props.items.choices || []}
                   styles={customSelectStyles}
                   theme={selectTheme}
                   components={{ DropdownIndicator, Option }}
@@ -286,7 +287,15 @@ class ArrayWidget extends Component {
                   className="react-select-container"
                   classNamePrefix="react-select"
                   options={
-                    this.props.choices || getChoices(this.props.default) || []
+                    this.props.items.choices
+                      ? [
+                          ...this.props.items.choices.map(option => ({
+                            value: option[0],
+                            label: option[1],
+                          })),
+                          { label: 'No value', value: 'no-value' },
+                        ]
+                      : []
                   }
                   styles={customSelectStyles}
                   theme={selectTheme}
